@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast App</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link rel="stylesheet" href="input.css">
+</head>
+<body>
+    <div class="container mx-auto p-8 rounded-lg shadow-lg bg-white">
+        <h1 class="text-3xl font-bold mb-4 text-gray-800 text-center">Weather Dashboard</h1>
+
+        <div class="flex items-center mb-4">
+            <input type="text" id="cityInput" placeholder="Enter City Name" class="w-full p-2 rounded-md border border-gray-300 focus:outline-none focus:ring focus:ring-blue-300 mr-2">
+            <button id="searchButton" class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-300">Search</button>
+            <button id="locationButton" class="px-4 py-2 bg-gray-700 text-white rounded-md hover:bg-gray-800 focus:outline-none focus:ring focus:ring-blue-300 ml-2 text-sm">Use Current Location</button>
+        </div>
+
+        <div id="currentWeather" class="hidden">
+            <div class="text-center">
+                <h2 id="city" class="text-2xl font-bold text-gray-800 mb-2"></h2>
+                <h3 id="date" class="text-lg text-gray-600 mb-2"></h3>
+                <img id="weatherIcon" src="" alt="Weather Icon" class="w-28 h-24 inline-block mx-auto mb-4">
+                <p id="temp" class="text-darkgray-800">Temperature: <span id="temperature"></span>°C</p>
+                <p id="wind" class="text-darkgray-800">Wind: <span id="windSpeed"></span> m/s</p>
+                <p id="humidity" class="text-darkgray-800">Humidity: <span id="humidity"></span>%</p>
+            </div>
+        </div>
+
+        <div id="extendedForecast" class="hidden">
+            <h2 class="text-2xl font-bold mb-2 text-black-800 text-center">5-Day Forecast</h2>
+            <div class="grid grid-cols-5 gap-4" id="forecastGrid">
+            </div>
+        </div>
+    </div>
+
+    <div id="cityDropdown" class="hidden fixed top-0 left-0 w-full h-full flex justify-center items-center bg-gray-800 bg-opacity-50">
+        <div class="bg-white p-4 rounded-lg shadow-lg">
+            <h2 class="text-lg font-bold text-gray-800 mb-2">Recent Cities</h2>
+            <ul id="citiesList">
+            </ul>
+            <button id="closeDropdown" class="px-4 py-2 bg-gray-700 text-white rounded-md hover:bg-gray-800 focus:outline-none focus:ring focus:ring-blue-300 mt-2">Close</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script> 
+</body>
+</html>
